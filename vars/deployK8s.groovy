@@ -3,7 +3,7 @@ def call(Map config) {
     sh """
     echo "🚀 Deploying ${config.service} version ${config.version}"
 
-    cd retail-store-aws-deployment/retail-store-helm-chart
+    cd helm-repo/retail-store-helm-chart
 
     helm upgrade --install retail-store . \
         -n retail-store-${config.namespace} \
