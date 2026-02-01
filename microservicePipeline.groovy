@@ -17,11 +17,11 @@ def call(Map config) {
                 }
             }
 
-            stage('Deploy') {
-                steps {
-                    deployK8s(deployName: config.deployName, healthUrl: config.healthUrl)
-                }
-            }
+            // stage('Deploy') {
+            //     steps {
+            //         deployK8s(deployName: config.deployName, healthUrl: config.healthUrl)
+            //     }
+            // }
         }
     }
 }
