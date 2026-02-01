@@ -15,7 +15,13 @@ def call(Map config) {
                     dockerBuildPush(service: config.service)
                 }
             }
-
+            stage('Checkout Helm Repo') {
+                steps {
+                    dir('helm-repo') {
+                        git url: 'https://github.com/Sarthakx67/retail-store-aws-deployment.git', branch: 'main'
+                    }
+                }
+            }
             stage('Deploy') {
                 steps {
                     deployK8s(
