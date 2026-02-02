@@ -11,8 +11,9 @@ def call(Map config) {
         -f values.yaml \
         -f values/${config.env}/values-${config.namespace}-${config.env}.yaml \
         --create-namespace \
-        --timeout 10m
-
-    kubectl rollout status deployment/src/${config.service} -n retail-store-${config.namespace}
+    
     """
+
+    // kubectl rollout status deployment/src/${config.service} -n retail-store-${config.namespace}
+    // """
 }
